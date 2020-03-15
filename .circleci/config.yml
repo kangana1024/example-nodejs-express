@@ -54,7 +54,7 @@ jobs:
       - run:
           name: "Build docker image and push Docker hub"
           command: |
-            if ["${CIRCLE_BRANCH}" == "master"]; then
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
               cp Dockerfile.production Dockerfile
               docker build -t kangana512/examnode:latest .
               docker build -t kangana512/examnode:${CIRCLE_SHA1} .
